@@ -1,0 +1,16 @@
+# temp files
+.DS_Store
+Thumbs.db
+Desktop.ini
+npm-debug.log
+lerna-debug.log
+
+# project ignores
+node_modules
+.cache
+client/src*
+client/index.html
+
+# jetBrains IDE ignores
+.idea
+
