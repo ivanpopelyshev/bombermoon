@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch:server": "nodemon --exec babel-node --watch ./server/ ./server/index.js",
+    "watch:server": "nodemon --watch ./server/ node_modules/@babel/node/bin/babel-node.js ./server/index.js",
     "watch:client": "parcel serve ./client-src/index.html --out-dir ./client/",
     "start": "npm run watch:server"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/node": "^7.8.4",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "md5": "^2.2.1",
@@ -22,7 +23,7 @@
     "ws": "^7.2.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.3",
+    "@babel/core": "^7.8.4",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.8.3"
   }
