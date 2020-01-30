@@ -5,7 +5,7 @@ var app = null;
 
 function doConnect() {
   app = new GameApp();
-  var socket = io.connect('http://' + window.location.hostname + ":8080");
+  var socket = io.connect(`${window.location.protocol}//${window.location.host}`);
   socket.on('game', function (data) {
     app.receiveMsg(new ArrBuffer(data));
   }).on('disconnect', function (data) {
