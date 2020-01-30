@@ -5,7 +5,7 @@ var app = null;
 
 function doConnect() {
   app = new GameApp();
-  var socket = io.connect(`${window.location.protocol}//${window.location.host}`);
+  var socket = io.connect(`${window.location.protocol}//${window.location.host}`, { transports: ['websocket']});
   socket.on('game', function (data) {
     app.receiveMsg(new ArrBuffer(data));
   }).on('disconnect', function (data) {

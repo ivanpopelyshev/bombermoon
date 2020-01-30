@@ -44,7 +44,7 @@ var rooms/*: Room[]*/ = [];
 var players = 0;
 
 export function startWsServer(server) {
-    var websocket = io.listen(server, {log: false});
+    var websocket = io.listen(server, {log: false, transports: ['websocket']});
 
     websocket.sockets.on('connection', function (socket) {
         players++;
